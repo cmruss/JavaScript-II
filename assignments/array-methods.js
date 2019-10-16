@@ -96,17 +96,7 @@ const largeSizedEmails = runners.map((value) => {
 })
 console.log(largeSizedEmails);
 
-// Problem 2 we want a list made up of everone who donated more than 180, we'll need names and shirt size for special shirts..
-
-let bigSpenders = runners.filter((value) => {
-    return value.donation > 180;
-})
-let bigSpenderSize = bigSpenders.map((value) => {
-    return (`${value.first_name} ${value.last_name} ${value.shirt_size}`);
-})
-console.log(bigSpenderSize);
-
-// Problem 3 find average donation amount
+// Problem 2 find average donation amount
 
 const contributions = runners.map(function(value) {
     return (value.donation)
@@ -122,3 +112,13 @@ let avgDonation = donationSum / contributions.length;
 // }
 
 console.log(avgDonation);
+
+// Problem 3 we want a list made up of everone who donated more than 180, we'll need names and shirt size for special shirts..
+
+let bigSpenders = runners.filter((value) => {
+    return value.donation > 180;
+})
+let bigSpenderSize = bigSpenders.map((value) => {
+    return (`${value.first_name} ${value.last_name} ${value.shirt_size}`);
+})
+console.log(bigSpenderSize);
