@@ -60,7 +60,7 @@ function sumNums(x, y, cb) {
 const add = (x, y) => {
     return x + y;
 }
-console.log(add(3, 5));
+console.log(sumNums(3, 5, add));
 
 function multiplyNums(x, y, cb) {
     // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -69,25 +69,27 @@ function multiplyNums(x, y, cb) {
 const multiply = (x, y) => {
     return x * y;
 }
-console.log(multiply(3, 5));
+console.log(multiplyNums(3, 5, multiply));
 
-
-function inArray(item, array) {
-    return array.includes(item);
-}
 
 function contains(item, list, cb) {
     // contains checks if an item is present inside of the given array/list.
     // Pass true to the callback if it is, otherwise pass false.
     return cb(item, list);
 }
+
+function inArray(item, array) {
+    return array.includes(item);
+}
 console.log(contains('Pencil', items, inArray));
 
 
 /* STRETCH PROBLEM */
+// const remDup = array.filter((item, index, self) => self.indexOf(item) == index);
 
-function removeDuplicates(array, cb) {
-    // removeDuplicates removes all duplicate values from the given array.
-    // Pass the duplicate free array to the callback function.
-    // Do not mutate the original array.
-}
+// function removeDuplicates(array, cb) {
+//     // removeDuplicates removes all duplicate values from the given array.
+//     // Pass the duplicate free array to the callback function.
+//     // Do not mutate the original array.
+// };
+// console.log(removeDuplicates(items, remDup));

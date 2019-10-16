@@ -111,12 +111,14 @@ console.log(bigSpenderSize);
 const contributions = runners.map(function(value) {
     return (value.donation)
 });
-const avgDonation = contributions.reduce(function(total, amount, index, array) {
-    total += amount;
-    if (index === array.length - 1) {
-        return total / array.length;
-    } else {
-        return total;
-    }
-})
+const donationSum = contributions.reduce((previous, current) => current += previous);
+let avgDonation = donationSum / contributions.length;
+
+// total += amount;
+// if (index === array.length - 1) {
+//     return total / array.length;
+// } else {
+//     return total;
+// }
+
 console.log(avgDonation);
